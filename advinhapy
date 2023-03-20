@@ -1,0 +1,25 @@
+import random
+
+pontos = 5
+i=0
+
+while pontos>0:
+
+    n=random.randint(1,5)
+
+    usu=int(input('em que número de 1 à 5 estou pensando: '))
+
+    if (n==usu):
+
+        pontos = pontos + 1
+        i = i + 1
+        print(' \nisso! estava pensando em {} \n'.format(n))
+        print('chances: {} \n'.format(pontos))
+
+    if (n!=usu):
+
+        pontos = pontos - 1
+        print('\n não! estava pensando em {} \n'.format(n))
+        print('chances: {} \n'.format(pontos))
+
+print('total de acertos: {}'.format(i))
