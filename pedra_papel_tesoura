@@ -1,0 +1,72 @@
+import random
+
+usuario = input('Qual seu nome: ')
+
+rodada = 5
+pres = 0
+pusu = 0
+
+while rodada > 0:
+    usu = input('pedra, papel ou tesoura? ')
+
+    lista = ['pedra', 'papel', 'tesoura']
+
+    res = random.choice(lista)
+
+    if res == usu:
+
+        print('empatou')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+
+    if res == 'pedra' and usu == 'tesoura':
+
+        print('eu ganhei!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pres = pres + 1
+
+    if res == 'pedra' and usu == 'papel':
+
+        print('você ganhou!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pusu = pusu + 1
+
+    if res == 'papel' and usu == 'pedra':
+
+        print('eu ganhei!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pres = pres + 1
+
+    if res == 'papel' and usu == 'tesoura':
+
+        print('você ganhou!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pusu = pusu + 1
+
+    if res == 'tesoura' and usu == 'pedra':
+
+        print('você ganhou!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pusu = pusu + 1
+
+    if res == 'tesoura' and usu == 'papel':
+
+        print('eu ganhei!')
+        print('coloquei {}'.format(res))
+
+        rodada = rodada - 1
+        pres = pres + 1
+
+print('{}: {} pontos'.format(usuario, pusu))
+print('Máquina: {} pontos'.format(pres))
